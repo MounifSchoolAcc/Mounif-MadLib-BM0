@@ -1,6 +1,7 @@
-print("choose your story: ints 0-1")
+import random
 
-s=int(input())
+
+s=random.randint(0,1)
 
 print("input noun:")
 
@@ -14,7 +15,7 @@ print("input adjective:")
 
 adjective=input()
 
-if s>0:
+if s>0.5:
 	print(f'''
 As the two {noun} fired up their chopper,
 they knew not of the world they would help forge.
