@@ -1,34 +1,32 @@
-import random
+from tkinter import *
+#need to install on all machines
+from tkmacosx import Button
+
+# Create the main window
+root = Tk()
+root.title("test")
+root['background']='darkgrey'
+
+#Set size of window
+root.geometry("300x300")
+
+# Create buttons
+red_button = Button(root, text="Red", background='red')
+yellow_button = Button(root, text="Yellow", background='yellow')
+green_button=Button(root,text="Green",background='green')
+
+#Add a label
+label = Label(root, text="stop sign?")
+tf=Text(root)
+tf['background']='darkgrey'
+# tf['text']='white'
+# Place widgets in window (with pack function!)
 
 
-s=random.randint(0,1)
-
-print("input noun:")
-
-noun=input()
-
-print("input verb:")
-
-verb=input()
-
-print("input adjective:")
-
-adjective=input()
-
-if s>0.5:
-	print(f'''
-As the two {noun} fired up their chopper,
-they knew not of the world they would help forge.
-They did not know the scope of the upcoming terror,
-only that it was their own.
-But they did know one thing;
-there was something {adjective} wrong with their world,
-and they had to {verb} to fix it.
-		''')
-else:
-	print(f'''
-While cleaning the attic, I found a dusty, old {noun}.
-When I touched it, it started to glow with a {adjective} light.
-Suddenly, I felt a strange urge to {verb} as loudly as I could.
-I have no idea what it means, but my life has been much more interesting since that day
-	''')
+red_button.pack()
+yellow_button.pack()
+green_button.pack()
+label.pack()
+tf.pack()
+# Start the GUI event loop
+root.mainloop()
