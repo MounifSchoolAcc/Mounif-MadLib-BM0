@@ -8,34 +8,28 @@ root.title("test")
 root['background']='#3E4149'
 
 #Set size of window
-root.geometry("600x600")
+root.geometry("300x400")
 
-# Create buttons
-yellow_button = Button(root, text="Yellow", background='yellow',highlightthickness=0)
+saveButton=Button(root,text='Save',background='grey',highlightthickness=0)
+editButton=Button(root,text='Edit',background='grey',highlightthickness=0)
+loadButton=Button(root,text='Load',background='grey',highlightthickness=0)
 
-green_button=Button(root,text="Green",background='green',highlightthickness=0)
-red_button = Button(root, text="Red", background='red',highlightthickness=0)
-
-lightButton=Button(root,text="what is light, but photons?",background='white')
-
-#Add a label
-label = Label(root, text="stop sign? what stop sign?")
-label['background']='#3E4149'
-label['fg']='white'
+tab1=Button(root,text='1',background='grey',highlightthickness=0)
+tab2=Button(root,text='2',background='grey',highlightthickness=0)
 
 tf=Text(root)
 tf['background']='#3E4149'
-label['fg']='white'
 tf['width']=50
 
 # Place widgets in window (with pack function!)
 
-lightButton.grid(row=2,column=0,padx=10)
-red_button.grid(row=0,column=0,padx=20,pady=20)
-yellow_button.grid(row=0,column=1,padx=20,pady=20)
-green_button.grid(row=0,column=2,padx=20,pady=20)
-label.grid(row=1,column=1,pady=10)
-tf.grid(row=3,column=1)
+editButton.grid(row=0,column=0)
+saveButton.grid(row=0,column=1)
+loadButton.grid(row=0,column=2)
+
+tab1.grid(row=1,column=0)
+tab2.grid(row=2,column=0)
+tf.grid(row=3,column=1,rowspan=1,columnspan=1)
 
 
 
