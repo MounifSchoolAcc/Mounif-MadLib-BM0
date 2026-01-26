@@ -5,12 +5,12 @@ import random
 
 def editFile():
 	
-	with open("demofile.txt","r") as f:
+	with open("textFileOne.txt","r") as f:
 		content=f.read()
 		tf.insert('1.0',content)
-def writeFile():
+def saveFile():
 	
-	with open("demofile.txt","w") as f:
+	with open("textFileOne.txt","w") as f:
 		content=tf.get("1.0", 'end-1c')
 		f.write(content)
 
@@ -47,18 +47,18 @@ editButton['fg']='#FFFDD0'
 editButton['background']='#3E4149'
 
 
-writeButton=Button(
+saveButton=Button(
 	root,
-	text='write file',
+	text='save file',
 	activebackground='#FFFFFF',
-	command=writeFile)
+	command=saveFile)
 
-writeButton['background']='#3E4149'
-writeButton['fg']='#FFFDD0'
+saveButton['background']='#3E4149'
+saveButton['fg']='#FFFDD0'
 
 tf.grid(column=1,row=0,rowspan=5,columnspan=5)
 editButton.grid(column=0,row=0)
-writeButton.grid(column=0,row=1)
+saveButton.grid(column=0,row=1)
 clearButton.grid(column=0,row=2)
 
 root.mainloop()
