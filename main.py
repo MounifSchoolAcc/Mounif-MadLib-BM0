@@ -3,11 +3,11 @@ from tkmacosx import Button
 
 import random
 
-def editFile():
-	
-	with open("textFileOne.txt","r") as f:
+def editFile(file):
+	with open(file,"r") as f:
 		content=f.read()
 		tf.insert('1.0',content)
+
 def saveFile():
 	
 	with open("textFileOne.txt","w") as f:
@@ -16,6 +16,11 @@ def saveFile():
 
 def clearText():
 	tf.delete('1.0','end')
+
+def tab1():
+	pass
+def tab2():
+	pass
 
 root=Tk()
 root.title='main'
@@ -51,14 +56,36 @@ saveButton=Button(
 	root,
 	text='save file',
 	activebackground='#FFFFFF',
-	command=saveFile)
+	command=saveFile,
+	background='#3E4149',
+	fg='#FFFDD0',
+	)
 
-saveButton['background']='#3E4149'
-saveButton['fg']='#FFFDD0'
+text1=Button(
+	root,
+	text='Tab One',
+	activebackground='#FFFFFF',
+	background='#3E4149',
+	fg='#FFFDD0',
+	command=tab1
+	)
+
+text2=Button(
+	root,
+	text='Tab Two',
+	activebackground='#FFFFFF',
+	background='#3E4149',
+	fg='#FFFDD0',
+	command=tab2
+	)
+
+editFile("textFileOne.txt")
 
 tf.grid(column=1,row=0,rowspan=5,columnspan=5)
-editButton.grid(column=0,row=0)
+# editButton.grid(column=0,row=0)
 saveButton.grid(column=0,row=1)
 clearButton.grid(column=0,row=2)
+text1.grid(column=0,row=3)
+text2.grid(column=0,row=4)
 
 root.mainloop()
